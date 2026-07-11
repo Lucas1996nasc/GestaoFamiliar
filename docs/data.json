@@ -55,8 +55,22 @@
       "id": "linguica-fina-frango-swift",
       "name": "Linguiça fina de frango Swift",
       "unit": "g",
-      "source": "Rótulo enviado — porção de 50 g (aproximadamente 1/8 da unidade)",
+      "source": "Rótulo enviado — porção de 50 g",
       "per100": {"calories": 118, "carbsTotal": 0, "fiber": 0, "netCarbs": 0, "protein": 13, "fat": 6.8, "saturatedFat": 2.1, "sodiumMg": 481}
+    },
+    {
+      "id": "queijo-coalho-swift",
+      "name": "Queijo coalho Swift",
+      "unit": "g",
+      "source": "Rótulo enviado — porção de 30 g (meio espeto)",
+      "per100": {"calories": 334, "carbsTotal": 0, "fiber": 0, "netCarbs": 0, "protein": 25, "fat": 26, "saturatedFat": 17, "sodiumMg": 562}
+    },
+    {
+      "id": "refrigerante-zero-acucar",
+      "name": "Refrigerante zero açúcar",
+      "unit": "ml",
+      "source": "Rótulo enviado — porção de 200 ml",
+      "per100": {"calories": 0, "carbsTotal": 0, "fiber": 0, "netCarbs": 0, "protein": 0, "fat": 0}
     }
   ],
   "recipes": [
@@ -124,6 +138,21 @@
       "sodiumMg": 82,
       "calories": 188,
       "notes": "Calculado pela embalagem: duas porções de 15 g."
+    },
+    {
+      "date": "2026-07-11",
+      "time": "18:58",
+      "meal": "Bebida",
+      "food": "Refrigerante zero açúcar",
+      "quantity": 200,
+      "unit": "ml",
+      "carbsTotal": 0,
+      "fiber": 0,
+      "netCarbs": 0,
+      "protein": 0,
+      "fat": 0,
+      "calories": 0,
+      "notes": "Registrado mesmo com valores energéticos e carboidratos zerados no rótulo."
     }
   ]
 }
