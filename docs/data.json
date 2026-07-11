@@ -8,6 +8,28 @@
     {"date": "2026-07-08", "weight": 86.65},
     {"date": "2026-07-09", "weight": 86.70}
   ],
+  "recipes": [
+    {
+      "id": "mousse-morango-zero",
+      "name": "Mousse de morango zero",
+      "yieldWeight": 343,
+      "yieldNote": "Rendimento estimado pela soma dos ingredientes informados, sem água adicional. Para maior precisão, pese o mousse pronto e altere o rendimento no cartão da receita.",
+      "ingredients": [
+        {"name": "Morango Swift", "quantity": 131, "unit": "g", "calories": 49.8, "carbsTotal": 10.1, "fiber": 2.6, "netCarbs": 7.5, "protein": 0.9, "fat": 0.7},
+        {"name": "Creme de leite leve Nestlé", "quantity": 200, "unit": "g", "calories": 364, "carbsTotal": 9, "fiber": 0, "netCarbs": 9, "protein": 5.4, "fat": 34},
+        {"name": "Gelatina Royal morango zero", "quantity": 12, "unit": "g", "calories": 38.6, "carbsTotal": 0, "fiber": 0, "netCarbs": 0, "protein": 6.9, "fat": 0}
+      ],
+      "nutritionTotal": {
+        "calories": 452.4,
+        "carbsTotal": 19.1,
+        "fiber": 2.6,
+        "netCarbs": 16.5,
+        "protein": 13.2,
+        "fat": 34.7
+      },
+      "notes": "Valores calculados pelos rótulos enviados. A gelatina informa 0 g de carboidratos por porção, sujeito ao arredondamento permitido no rótulo."
+    }
+  ],
   "entries": [
     {
       "date": "2026-07-11",
