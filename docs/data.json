@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T11:01:00",
+  "updatedAt": "2026-07-11T14:46:00-03:00",
   "dailyTargetNetCarbs": 20,
   "entries": [
     {
@@ -16,6 +16,21 @@
       "fat": 0,
       "calories": 41,
       "notes": "Sem açúcar adicionado; valor estimado e sujeito a variação natural."
+    },
+    {
+      "date": "2026-07-11",
+      "time": "14:46",
+      "meal": "Lanche",
+      "food": "Queijo prato",
+      "quantity": 34,
+      "unit": "g",
+      "carbsTotal": 0.6,
+      "fiber": 0,
+      "netCarbs": 0.6,
+      "protein": 7.7,
+      "fat": 9.9,
+      "calories": 122,
+      "notes": "Estimativa para queijo prato genérico; os valores variam conforme a marca."
     }
   ]
 }
