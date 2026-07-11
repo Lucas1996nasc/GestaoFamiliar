@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T14:49:00-03:00",
+  "updatedAt": "2026-07-11T15:39:00-03:00",
   "dailyTargetNetCarbs": 20,
   "entries": [
     {
@@ -24,13 +24,16 @@
       "food": "Queijo prato",
       "quantity": 34,
       "unit": "g",
-      "carbsTotal": 0.6,
+      "carbsTotal": 0,
       "fiber": 0,
-      "netCarbs": 0.6,
-      "protein": 7.7,
-      "fat": 9.9,
-      "calories": 122,
-      "notes": "Estimativa para queijo prato genérico; os valores variam conforme a marca."
+      "netCarbs": 0,
+      "protein": 7.5,
+      "fat": 9.5,
+      "saturatedFat": 5.8,
+      "sodiumMg": 139,
+      "calciumMg": 262,
+      "calories": 116,
+      "notes": "Calculado pela embalagem: porção de 30 g com 102 kcal, 6,6 g de proteína, 8,4 g de gorduras totais, 5,1 g de gorduras saturadas e 123 mg de sódio. O rótulo informa quantidade não significativa de carboidratos."
     },
     {
       "date": "2026-07-11",
@@ -39,13 +42,15 @@
       "food": "Amendoim salgado Elma Chips",
       "quantity": 30,
       "unit": "g",
-      "carbsTotal": 4.8,
-      "fiber": 2.4,
-      "netCarbs": 2.4,
-      "protein": 7.5,
-      "fat": 14.7,
-      "calories": 174,
-      "notes": "Estimativa para amendoim torrado e salgado; confirmar pela tabela nutricional da embalagem."
+      "carbsTotal": 2.2,
+      "fiber": 1.8,
+      "netCarbs": 0.4,
+      "protein": 8.2,
+      "fat": 16.2,
+      "saturatedFat": 2.2,
+      "sodiumMg": 82,
+      "calories": 188,
+      "notes": "Calculado pela embalagem: 2 porções de 15 g; cada porção contém 94 kcal, 1,1 g de carboidratos, 0,9 g de fibras, 4,1 g de proteína, 8,1 g de gorduras totais e 41 mg de sódio."
     }
   ]
 }
