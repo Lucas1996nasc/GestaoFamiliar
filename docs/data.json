@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-07-11T15:39:00-03:00",
+  "updatedAt": "2026-07-11",
   "dailyTargetNetCarbs": 20,
+  "weightGoalsKg": [5, 10, 15],
+  "weightHistory": [
+    {"date": "2026-07-06", "weight": 87.85},
+    {"date": "2026-07-07", "weight": 86.45},
+    {"date": "2026-07-08", "weight": 86.65},
+    {"date": "2026-07-09", "weight": 86.70}
+  ],
   "entries": [
     {
       "date": "2026-07-11",
@@ -33,7 +40,7 @@
       "sodiumMg": 139,
       "calciumMg": 262,
       "calories": 116,
-      "notes": "Calculado pela embalagem: porção de 30 g com 102 kcal, 6,6 g de proteína, 8,4 g de gorduras totais, 5,1 g de gorduras saturadas e 123 mg de sódio. O rótulo informa quantidade não significativa de carboidratos."
+      "notes": "Calculado pela embalagem; o rótulo informa quantidade não significativa de carboidratos."
     },
     {
       "date": "2026-07-11",
@@ -50,7 +57,7 @@
       "saturatedFat": 2.2,
       "sodiumMg": 82,
       "calories": 188,
-      "notes": "Calculado pela embalagem: 2 porções de 15 g; cada porção contém 94 kcal, 1,1 g de carboidratos, 0,9 g de fibras, 4,1 g de proteína, 8,1 g de gorduras totais e 41 mg de sódio."
+      "notes": "Calculado pela embalagem: duas porções de 15 g."
     }
   ]
 }
