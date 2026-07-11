@@ -1,0 +1,21 @@
+{
+  "updatedAt": "2026-07-11T11:01:00",
+  "dailyTargetNetCarbs": 20,
+  "entries": [
+    {
+      "date": "2026-07-11",
+      "time": "11:01",
+      "meal": "Bebida",
+      "food": "Água de coco natural",
+      "quantity": 200,
+      "unit": "ml",
+      "carbsTotal": 10.6,
+      "fiber": 0.3,
+      "netCarbs": 10.3,
+      "protein": 0,
+      "fat": 0,
+      "calories": 41,
+      "notes": "Sem açúcar adicionado; valor estimado e sujeito a variação natural."
+    }
+  ]
+}
