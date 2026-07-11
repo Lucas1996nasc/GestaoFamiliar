@@ -43,6 +43,13 @@
       "unit": "g",
       "source": "Rótulo enviado",
       "per100": {"calories": 182, "carbsTotal": 4.5, "fiber": 0, "netCarbs": 4.5, "protein": 2.7, "fat": 17, "saturatedFat": 11, "sodiumMg": 64}
+    },
+    {
+      "id": "tulipa-temperada-swift",
+      "name": "Tulipa temperada Swift",
+      "unit": "g",
+      "source": "Rótulo enviado — porção de 100 g de parte comestível (aproximadamente 2 unidades)",
+      "per100": {"calories": 167, "carbsTotal": 0.4, "fiber": 0, "netCarbs": 0.4, "protein": 15, "fat": 12, "saturatedFat": 3.4, "sodiumMg": 473}
     }
   ],
   "recipes": [
