@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T14:46:00-03:00",
+  "updatedAt": "2026-07-11T14:49:00-03:00",
   "dailyTargetNetCarbs": 20,
   "entries": [
     {
@@ -31,6 +31,21 @@
       "fat": 9.9,
       "calories": 122,
       "notes": "Estimativa para queijo prato genérico; os valores variam conforme a marca."
+    },
+    {
+      "date": "2026-07-11",
+      "time": "14:49",
+      "meal": "Lanche",
+      "food": "Amendoim salgado Elma Chips",
+      "quantity": 30,
+      "unit": "g",
+      "carbsTotal": 4.8,
+      "fiber": 2.4,
+      "netCarbs": 2.4,
+      "protein": 7.5,
+      "fat": 14.7,
+      "calories": 174,
+      "notes": "Estimativa para amendoim torrado e salgado; confirmar pela tabela nutricional da embalagem."
     }
   ]
 }
