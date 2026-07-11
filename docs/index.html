@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c2d">
+  <title>Painel Cetogênico</title>
+  <style>
+    :root{--bg:#f4f7f5;--card:#fff;--ink:#17342a;--muted:#65776f;--green:#176b4a;--green2:#2da66f;--soft:#e4f4eb;--line:#dce6e0;--warn:#9a6a14;--shadow:0 14px 35px rgba(24,65,49,.09)}
+    *{box-sizing:border-box} body{margin:0;background:linear-gradient(145deg,#eef7f1 0,#f7f8f7 45%,#edf2ef 100%);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    .wrap{max-width:1120px;margin:auto;padding:28px 18px 48px}
+    header{display:flex;gap:18px;align-items:center;justify-content:space-between;margin-bottom:22px}
+    .brand h1{margin:0;font-size:clamp(27px,4vw,42px);letter-spacing:-.04em}.brand p{margin:5px 0 0;color:var(--muted)}
+    .status{background:var(--soft);color:var(--green);border:1px solid #c7e8d5;border-radius:999px;padding:8px 13px;font-weight:700;white-space:nowrap}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.card{background:rgba(255,255,255,.94);border:1px solid rgba(215,228,220,.95);border-radius:20px;box-shadow:var(--shadow)}
+    .hero{grid-column:span 8;padding:22px}.chart-card{grid-column:span 4;padding:22px;display:grid;place-items:center}.metric{grid-column:span 3;padding:18px}
+    .metric .label{color:var(--muted);font-size:13px}.metric .value{font-size:29px;font-weight:800;letter-spacing:-.04em;margin-top:3px}.metric small{color:var(--muted)}
+    .eyebrow{text-transform:uppercase;letter-spacing:.11em;color:var(--green);font-size:11px;font-weight:800}.hero h2{font-size:25px;margin:5px 0 4px}.hero .big{font-size:clamp(44px,7vw,70px);font-weight:850;letter-spacing:-.065em;line-height:1;margin:18px 0 8px}.hero .big span{font-size:.37em;letter-spacing:0;color:var(--muted)}
+    .progress{height:14px;background:#e6ece8;border-radius:999px;overflow:hidden;margin:19px 0 9px}.progress>div{height:100%;background:linear-gradient(90deg,var(--green),var(--green2));border-radius:inherit;transition:width .45s ease}.row{display:flex;justify-content:space-between;gap:12px;color:var(--muted)}
+    .donut{--pct:0;width:190px;aspect-ratio:1;border-radius:50%;background:conic-gradient(var(--green2) calc(var(--pct)*1%),#e5ece8 0);display:grid;place-items:center;position:relative}.donut:before{content:"";width:126px;aspect-ratio:1;border-radius:50%;background:white;box-shadow:inset 0 0 0 1px var(--line)}.donut-label{position:absolute;text-align:center}.donut-label strong{display:block;font-size:30px}.donut-label span{color:var(--muted);font-size:12px}
+    .settings{grid-column:span 12;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.settings label{font-weight:750}.settings input{width:100px;border:1px solid var(--line);border-radius:12px;padding:10px 11px;font:inherit;font-weight:750;color:var(--ink)}.settings button{border:0;background:var(--green);color:white;padding:10px 14px;border-radius:12px;font-weight:750;cursor:pointer}.settings .hint{color:var(--muted);font-size:13px}
+    .table-card{grid-column:span 12;overflow:hidden}.table-head{display:flex;justify-content:space-between;align-items:end;padding:20px 20px 12px}.table-head h3{margin:0;font-size:20px}.table-head span{color:var(--muted);font-size:13px}table{width:100%;border-collapse:collapse}th,td{padding:13px 16px;text-align:left;border-top:1px solid var(--line)}th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:#f9fbfa}td.num{text-align:right;font-variant-numeric:tabular-nums}.food{font-weight:750}.tag{display:inline-block;background:var(--soft);color:var(--green);border-radius:999px;padding:3px 8px;font-size:12px;font-weight:700}
+    footer{color:var(--muted);font-size:12px;margin-top:18px;text-align:center}.warning{color:var(--warn)}
+    @media(max-width:800px){.hero,.chart-card{grid-column:span 12}.metric{grid-column:span 6}.chart-card{min-height:245px}.table-card{overflow:auto}table{min-width:760px}}
+    @media(max-width:480px){header{align-items:flex-start;flex-direction:column}.metric{grid-column:span 12}.wrap{padding-top:20px}.hero,.chart-card,.metric{border-radius:17px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="brand"><h1>Painel Cetogênico</h1><p id="subtitle">Carregando seus dados…</p></div>
+      <div class="status" id="status">Atualizando</div>
+    </header>
+
+    <section class="grid">
+      <article class="card hero">
+        <div class="eyebrow">Carboidratos líquidos restantes</div>
+        <h2 id="dayTitle">Hoje</h2>
+        <div class="big"><span id="remaining">—</span> <span>g</span></div>
+        <div class="progress" aria-label="Progresso da meta"><div id="progressBar" style="width:0%"></div></div>
+        <div class="row"><span id="consumedText">— consumidos</span><span id="targetText">Meta —</span></div>
+      </article>
+
+      <article class="card chart-card">
+        <div class="donut" id="donut"><div class="donut-label"><strong id="percent">0%</strong><span>da meta utilizada</span></div></div>
+      </article>
+
+      <article class="card metric"><div class="label">Carboidratos líquidos</div><div class="value" id="netCarbs">—</div><small>gramas consumidos</small></article>
+      <article class="card metric"><div class="label">Calorias</div><div class="value" id="calories">—</div><small>kcal estimadas</small></article>
+      <article class="card metric"><div class="label">Proteínas</div><div class="value" id="protein">—</div><small>gramas</small></article>
+      <article class="card metric"><div class="label">Gorduras</div><div class="value" id="fat">—</div><small>gramas</small></article>
+
+      <article class="card settings">
+        <div><label for="targetInput">Meta diária de carboidratos líquidos</label><div class="hint">A alteração fica salva neste navegador.</div></div>
+        <div><input id="targetInput" type="number" min="1" max="100" step="1" aria-label="Meta diária em gramas"> <button id="saveTarget">Salvar meta</button></div>
+      </article>
+
+      <article class="card table-card">
+        <div class="table-head"><div><div class="eyebrow">Diário alimentar</div><h3>Alimentos registrados</h3></div><span id="entryCount"></span></div>
+        <table>
+          <thead><tr><th>Hora</th><th>Refeição</th><th>Alimento</th><th>Quantidade</th><th>Carb. totais</th><th>Fibras</th><th>Carb. líquidos</th><th>Calorias</th></tr></thead>
+          <tbody id="entries"></tbody>
+        </table>
+      </article>
+    </section>
+
+    <footer><span class="warning">Estimativas nutricionais:</span> este painel não substitui acompanhamento médico ou nutricional. A resposta individual à dieta cetogênica varia.</footer>
+  </main>
+
+<script>
+const fallback={updatedAt:'2026-07-11T11:01:00',dailyTargetNetCarbs:20,entries:[{date:'2026-07-11',time:'11:01',meal:'Bebida',food:'Água de coco natural',quantity:200,unit:'ml',carbsTotal:10.6,fiber:0.3,netCarbs:10.3,protein:0,fat:0,calories:41,notes:'Sem açúcar adicionado.'}]};
+const fmt=n=>Number(n||0).toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1});
+const formatDate=s=>new Date(s+'T12:00:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric'});
+function render(data){
+  const dates=[...new Set(data.entries.map(e=>e.date))].sort();
+  const selected=dates.at(-1);
+  const rows=data.entries.filter(e=>e.date===selected);
+  const sum=k=>rows.reduce((a,e)=>a+Number(e[k]||0),0);
+  const saved=Number(localStorage.getItem('ketoTarget'));
+  const target=saved>0?saved:Number(data.dailyTargetNetCarbs||20);
+  const net=sum('netCarbs'), remaining=Math.max(target-net,0), pct=target?Math.min(net/target*100,100):0;
+  document.getElementById('subtitle').textContent='Resumo de '+formatDate(selected)+' • última atualização '+new Date(data.updatedAt).toLocaleString('pt-BR');
+  document.getElementById('status').textContent=net<=target?'Dentro da meta':'Meta ultrapassada';
+  document.getElementById('dayTitle').textContent=formatDate(selected);
+  document.getElementById('remaining').textContent=fmt(remaining);
+  document.getElementById('consumedText').textContent=fmt(net)+' g consumidos';
+  document.getElementById('targetText').textContent='Meta '+fmt(target)+' g';
+  document.getElementById('progressBar').style.width=pct+'%';
+  document.getElementById('donut').style.setProperty('--pct',pct);
+  document.getElementById('percent').textContent=Math.round(pct)+'%';
+  document.getElementById('netCarbs').textContent=fmt(net)+' g';
+  document.getElementById('calories').textContent=Math.round(sum('calories'));
+  document.getElementById('protein').textContent=fmt(sum('protein'))+' g';
+  document.getElementById('fat').textContent=fmt(sum('fat'))+' g';
+  document.getElementById('targetInput').value=target;
+  document.getElementById('entryCount').textContent=rows.length+' registro'+(rows.length===1?'':'s');
+  document.getElementById('entries').innerHTML=rows.map(e=>`<tr><td>${e.time||'—'}</td><td><span class="tag">${e.meal||'Outro'}</span></td><td><div class="food">${e.food}</div><small>${e.notes||''}</small></td><td>${fmt(e.quantity)} ${e.unit}</td><td class="num">${fmt(e.carbsTotal)} g</td><td class="num">${fmt(e.fiber)} g</td><td class="num"><strong>${fmt(e.netCarbs)} g</strong></td><td class="num">${Math.round(e.calories||0)} kcal</td></tr>`).join('');
+  document.getElementById('saveTarget').onclick=()=>{const v=Number(document.getElementById('targetInput').value);if(v>0){localStorage.setItem('ketoTarget',v);render(data)}};
+}
+fetch('./data.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject()).then(render).catch(()=>render(fallback));
+</script>
+</body>
+</html>
