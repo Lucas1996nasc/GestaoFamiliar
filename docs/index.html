@@ -2,102 +2,80 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#123c2d">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#6d28d9">
   <title>Painel Cetogênico</title>
   <style>
-    :root{--bg:#f4f7f5;--card:#fff;--ink:#17342a;--muted:#65776f;--green:#176b4a;--green2:#2da66f;--soft:#e4f4eb;--line:#dce6e0;--warn:#9a6a14;--shadow:0 14px 35px rgba(24,65,49,.09)}
-    *{box-sizing:border-box} body{margin:0;background:linear-gradient(145deg,#eef7f1 0,#f7f8f7 45%,#edf2ef 100%);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    .wrap{max-width:1120px;margin:auto;padding:28px 18px 48px}
-    header{display:flex;gap:18px;align-items:center;justify-content:space-between;margin-bottom:22px}
-    .brand h1{margin:0;font-size:clamp(27px,4vw,42px);letter-spacing:-.04em}.brand p{margin:5px 0 0;color:var(--muted)}
-    .status{background:var(--soft);color:var(--green);border:1px solid #c7e8d5;border-radius:999px;padding:8px 13px;font-weight:700;white-space:nowrap}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.card{background:rgba(255,255,255,.94);border:1px solid rgba(215,228,220,.95);border-radius:20px;box-shadow:var(--shadow)}
-    .hero{grid-column:span 8;padding:22px}.chart-card{grid-column:span 4;padding:22px;display:grid;place-items:center}.metric{grid-column:span 3;padding:18px}
-    .metric .label{color:var(--muted);font-size:13px}.metric .value{font-size:29px;font-weight:800;letter-spacing:-.04em;margin-top:3px}.metric small{color:var(--muted)}
-    .eyebrow{text-transform:uppercase;letter-spacing:.11em;color:var(--green);font-size:11px;font-weight:800}.hero h2{font-size:25px;margin:5px 0 4px}.hero .big{font-size:clamp(44px,7vw,70px);font-weight:850;letter-spacing:-.065em;line-height:1;margin:18px 0 8px}.hero .big span{font-size:.37em;letter-spacing:0;color:var(--muted)}
-    .progress{height:14px;background:#e6ece8;border-radius:999px;overflow:hidden;margin:19px 0 9px}.progress>div{height:100%;background:linear-gradient(90deg,var(--green),var(--green2));border-radius:inherit;transition:width .45s ease}.row{display:flex;justify-content:space-between;gap:12px;color:var(--muted)}
-    .donut{--pct:0;width:190px;aspect-ratio:1;border-radius:50%;background:conic-gradient(var(--green2) calc(var(--pct)*1%),#e5ece8 0);display:grid;place-items:center;position:relative}.donut:before{content:"";width:126px;aspect-ratio:1;border-radius:50%;background:white;box-shadow:inset 0 0 0 1px var(--line)}.donut-label{position:absolute;text-align:center}.donut-label strong{display:block;font-size:30px}.donut-label span{color:var(--muted);font-size:12px}
-    .settings{grid-column:span 12;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.settings label{font-weight:750}.settings input{width:100px;border:1px solid var(--line);border-radius:12px;padding:10px 11px;font:inherit;font-weight:750;color:var(--ink)}.settings button{border:0;background:var(--green);color:white;padding:10px 14px;border-radius:12px;font-weight:750;cursor:pointer}.settings .hint{color:var(--muted);font-size:13px}
-    .table-card{grid-column:span 12;overflow:hidden}.table-head{display:flex;justify-content:space-between;align-items:end;padding:20px 20px 12px}.table-head h3{margin:0;font-size:20px}.table-head span{color:var(--muted);font-size:13px}table{width:100%;border-collapse:collapse}th,td{padding:13px 16px;text-align:left;border-top:1px solid var(--line)}th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:#f9fbfa}td.num{text-align:right;font-variant-numeric:tabular-nums}.food{font-weight:750}.tag{display:inline-block;background:var(--soft);color:var(--green);border-radius:999px;padding:3px 8px;font-size:12px;font-weight:700}
-    footer{color:var(--muted);font-size:12px;margin-top:18px;text-align:center}.warning{color:var(--warn)}
-    @media(max-width:800px){.hero,.chart-card{grid-column:span 12}.metric{grid-column:span 6}.chart-card{min-height:245px}.table-card{overflow:auto}table{min-width:760px}}
-    @media(max-width:480px){header{align-items:flex-start;flex-direction:column}.metric{grid-column:span 12}.wrap{padding-top:20px}.hero,.chart-card,.metric{border-radius:17px}}
+    :root{--purple:#6d28d9;--purple2:#8b5cf6;--purple3:#ede9fe;--ink:#24163d;--muted:#746987;--bg:#f8f6fc;--card:#fff;--line:#e8e1f1;--ok:#16794b;--okbg:#e9f8f0;--warn:#9a5b00;--warnbg:#fff5dc;--danger:#b42318;--dangerbg:#fff0ee;--shadow:0 12px 30px rgba(60,24,103,.09)}
+    *{box-sizing:border-box}html{background:var(--bg)}body{margin:0;color:var(--ink);background:radial-gradient(circle at 100% 0,#eee8ff 0,transparent 34%),var(--bg);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    button,input{font:inherit}.app{max-width:1080px;margin:auto;padding:18px 14px calc(32px + env(safe-area-inset-bottom))}
+    header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:4px 2px 16px}.brand{display:flex;align-items:center;gap:11px}.logo{width:43px;height:43px;border-radius:14px;background:linear-gradient(145deg,var(--purple),var(--purple2));display:grid;place-items:center;color:#fff;font-size:22px;box-shadow:0 8px 20px rgba(109,40,217,.28)}h1{font-size:22px;line-height:1.05;margin:0;letter-spacing:-.035em}.subtitle{font-size:12px;color:var(--muted);margin-top:5px}.status{font-size:12px;font-weight:800;padding:7px 10px;border-radius:999px;white-space:nowrap}.status.ok{background:var(--okbg);color:var(--ok)}.status.warn{background:var(--warnbg);color:var(--warn)}.status.danger{background:var(--dangerbg);color:var(--danger)}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
+    .hero{grid-column:1/-1;padding:21px;background:linear-gradient(145deg,#5b21b6,#7c3aed 58%,#9f67f7);color:#fff;border:0;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:rgba(255,255,255,.10);right:-58px;top:-72px}.eyebrow{font-size:11px;font-weight:850;letter-spacing:.11em;text-transform:uppercase;color:var(--purple)}.hero .eyebrow{color:#e9ddff}.hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.date{font-weight:700;font-size:13px;color:#e9ddff}.remaining{font-weight:900;font-size:54px;line-height:.95;letter-spacing:-.065em;margin:18px 0 10px}.remaining small{font-size:18px;letter-spacing:0;font-weight:700;opacity:.8}.bar{height:11px;background:rgba(255,255,255,.22);border-radius:999px;overflow:hidden}.bar>div{height:100%;width:0;background:#fff;border-radius:inherit;transition:width .4s ease}.bar-labels{display:flex;justify-content:space-between;gap:10px;margin-top:8px;font-size:12px;color:#eee5ff}.hero-note{margin-top:16px;padding:11px 12px;border-radius:14px;background:rgba(255,255,255,.13);font-size:12px;color:#f5efff}
+    .metric{padding:16px;min-height:111px}.metric .label{font-size:12px;color:var(--muted)}.metric .value{font-size:26px;font-weight:900;letter-spacing:-.04em;margin-top:5px}.metric .unit{font-size:12px;color:var(--muted);margin-top:2px}.metric.primary .value{color:var(--purple)}
+    .goal{grid-column:1/-1;padding:18px}.goal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.goal h2,.diary h2{font-size:18px;margin:3px 0 0}.range{font-size:11px;font-weight:800;color:var(--purple);background:var(--purple3);padding:6px 9px;border-radius:999px;white-space:nowrap}.goal p{color:var(--muted);font-size:13px;margin:12px 0}.control{display:grid;grid-template-columns:1fr auto;gap:9px}.control input{width:100%;min-width:0;border:1px solid #d9ccef;background:#faf8ff;color:var(--ink);border-radius:13px;padding:12px 13px;font-weight:850;outline:none}.control input:focus{border-color:var(--purple2);box-shadow:0 0 0 3px #ede9fe}.control button{border:0;border-radius:13px;background:var(--purple);color:#fff;padding:12px 15px;font-weight:850}.quick{display:flex;gap:7px;margin-top:10px;flex-wrap:wrap}.quick button{border:1px solid #d9ccef;background:#fff;color:var(--purple);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:800}.science{margin-top:13px;border-top:1px solid var(--line);padding-top:12px;font-size:12px;color:var(--muted)}.science strong{color:var(--ink)}
+    .diary{grid-column:1/-1;padding:18px}.diary-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-end;margin-bottom:12px}.count{font-size:12px;color:var(--muted)}.food-list{display:grid;gap:9px}.food-card{border:1px solid var(--line);border-radius:16px;padding:13px;background:#fefeff}.food-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.food-name{font-weight:850}.time{font-size:12px;color:var(--muted);white-space:nowrap}.tag{display:inline-flex;margin-top:5px;background:var(--purple3);color:var(--purple);border-radius:999px;padding:3px 8px;font-size:11px;font-weight:800}.food-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:11px}.food-stat{background:#f7f3fc;border-radius:11px;padding:8px}.food-stat span{display:block;color:var(--muted);font-size:10px}.food-stat strong{font-size:13px}.note{font-size:11px;color:var(--muted);margin-top:8px}
+    .desktop-table{display:none}.safety{grid-column:1/-1;padding:16px;background:#fffaf0;border-color:#f1dfb7}.safety strong{color:#7c4a00}.safety p{font-size:12px;color:#796b54;margin:5px 0 0}footer{font-size:11px;color:var(--muted);text-align:center;margin:17px 10px 0}
+    @media(min-width:720px){.app{padding:28px 22px 48px}.grid{grid-template-columns:repeat(12,1fr);gap:15px}.hero{grid-column:span 8;min-height:275px}.metric{grid-column:span 2}.goal{grid-column:span 4;grid-row:span 2}.diary{grid-column:1/-1}.food-list{display:none}.desktop-table{display:block;overflow:auto}table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:12px 10px;border-top:1px solid var(--line);text-align:left}th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}td.num{text-align:right;font-variant-numeric:tabular-nums}.safety{grid-column:1/-1}.remaining{font-size:70px}}
+    @media(max-width:370px){.remaining{font-size:47px}.metric{padding:14px}.metric .value{font-size:23px}.control{grid-template-columns:1fr}.control button{width:100%}.status{display:none}}
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <header>
-      <div class="brand"><h1>Painel Cetogênico</h1><p id="subtitle">Carregando seus dados…</p></div>
-      <div class="status" id="status">Atualizando</div>
-    </header>
+<main class="app">
+  <header>
+    <div class="brand"><div class="logo">◒</div><div><h1>Painel Cetogênico</h1><div class="subtitle" id="subtitle">Carregando seus dados…</div></div></div>
+    <div class="status ok" id="status">Atualizando</div>
+  </header>
 
-    <section class="grid">
-      <article class="card hero">
-        <div class="eyebrow">Carboidratos líquidos restantes</div>
-        <h2 id="dayTitle">Hoje</h2>
-        <div class="big"><span id="remaining">—</span> <span>g</span></div>
-        <div class="progress" aria-label="Progresso da meta"><div id="progressBar" style="width:0%"></div></div>
-        <div class="row"><span id="consumedText">— consumidos</span><span id="targetText">Meta —</span></div>
-      </article>
+  <section class="grid">
+    <article class="card hero">
+      <div class="hero-top"><div><div class="eyebrow">Carboidratos líquidos restantes</div><div class="date" id="dayTitle">Hoje</div></div><div id="heroPct">0%</div></div>
+      <div class="remaining"><span id="remaining">—</span> <small>g</small></div>
+      <div class="bar"><div id="progressBar"></div></div>
+      <div class="bar-labels"><span id="consumedText">— consumidos</span><span id="targetText">Meta —</span></div>
+      <div class="hero-note" id="heroNote">Uma meta de 20 g líquidos é uma referência inicial conservadora para favorecer cetose em muitos adultos.</div>
+    </article>
 
-      <article class="card chart-card">
-        <div class="donut" id="donut"><div class="donut-label"><strong id="percent">0%</strong><span>da meta utilizada</span></div></div>
-      </article>
+    <article class="card metric primary"><div class="label">Carboidratos líquidos</div><div class="value" id="netCarbs">—</div><div class="unit">consumidos hoje</div></article>
+    <article class="card metric"><div class="label">Calorias</div><div class="value" id="calories">—</div><div class="unit">kcal estimadas</div></article>
+    <article class="card metric"><div class="label">Proteínas</div><div class="value" id="protein">—</div><div class="unit">gramas</div></article>
+    <article class="card metric"><div class="label">Gorduras</div><div class="value" id="fat">—</div><div class="unit">gramas</div></article>
 
-      <article class="card metric"><div class="label">Carboidratos líquidos</div><div class="value" id="netCarbs">—</div><small>gramas consumidos</small></article>
-      <article class="card metric"><div class="label">Calorias</div><div class="value" id="calories">—</div><small>kcal estimadas</small></article>
-      <article class="card metric"><div class="label">Proteínas</div><div class="value" id="protein">—</div><small>gramas</small></article>
-      <article class="card metric"><div class="label">Gorduras</div><div class="value" id="fat">—</div><small>gramas</small></article>
+    <article class="card goal">
+      <div class="goal-head"><div><div class="eyebrow">Meta diária</div><h2>Ajuste de carboidratos</h2></div><div class="range">Faixa keto: 20–50 g</div></div>
+      <p>Para uma tentativa inicial de cetose nutricional, mantive <strong>20 g de carboidratos líquidos por dia</strong>. A necessidade real varia entre pessoas.</p>
+      <div class="control"><input id="targetInput" type="number" min="10" max="100" step="1" inputmode="numeric" aria-label="Meta diária de carboidratos líquidos"><button id="saveTarget">Salvar</button></div>
+      <div class="quick"><button data-goal="20">20 g</button><button data-goal="25">25 g</button><button data-goal="30">30 g</button></div>
+      <div class="science"><strong>Importante:</strong> reduzir ainda mais os carboidratos não significa automaticamente perder mais gordura. O resultado depende também de ingestão total, proteína adequada, qualidade dos alimentos e constância.</div>
+    </article>
 
-      <article class="card settings">
-        <div><label for="targetInput">Meta diária de carboidratos líquidos</label><div class="hint">A alteração fica salva neste navegador.</div></div>
-        <div><input id="targetInput" type="number" min="1" max="100" step="1" aria-label="Meta diária em gramas"> <button id="saveTarget">Salvar meta</button></div>
-      </article>
+    <article class="card diary">
+      <div class="diary-head"><div><div class="eyebrow">Diário alimentar</div><h2>Alimentos registrados</h2></div><div class="count" id="entryCount"></div></div>
+      <div class="food-list" id="foodList"></div>
+      <div class="desktop-table"><table><thead><tr><th>Hora</th><th>Refeição</th><th>Alimento</th><th>Quantidade</th><th>Carb. totais</th><th>Fibras</th><th>Carb. líquidos</th><th>Calorias</th></tr></thead><tbody id="entries"></tbody></table></div>
+    </article>
 
-      <article class="card table-card">
-        <div class="table-head"><div><div class="eyebrow">Diário alimentar</div><h3>Alimentos registrados</h3></div><span id="entryCount"></span></div>
-        <table>
-          <thead><tr><th>Hora</th><th>Refeição</th><th>Alimento</th><th>Quantidade</th><th>Carb. totais</th><th>Fibras</th><th>Carb. líquidos</th><th>Calorias</th></tr></thead>
-          <tbody id="entries"></tbody>
-        </table>
-      </article>
-    </section>
-
-    <footer><span class="warning">Estimativas nutricionais:</span> este painel não substitui acompanhamento médico ou nutricional. A resposta individual à dieta cetogênica varia.</footer>
-  </main>
-
+    <article class="card safety"><strong>Atenção à segurança</strong><p>Diabetes, doença renal/hepática/pancreática, gravidez, transtorno alimentar ou uso de insulina, sulfonilureia ou inibidor de SGLT2 exigem avaliação profissional antes de manter uma dieta cetogênica.</p></article>
+  </section>
+  <footer>Valores nutricionais são estimativas e não substituem acompanhamento médico ou nutricional.</footer>
+</main>
 <script>
-const fallback={updatedAt:'2026-07-11T11:01:00',dailyTargetNetCarbs:20,entries:[{date:'2026-07-11',time:'11:01',meal:'Bebida',food:'Água de coco natural',quantity:200,unit:'ml',carbsTotal:10.6,fiber:0.3,netCarbs:10.3,protein:0,fat:0,calories:41,notes:'Sem açúcar adicionado.'}]};
+const fallback={updatedAt:'2026-07-11T14:49:00-03:00',dailyTargetNetCarbs:20,entries:[]};
 const fmt=n=>Number(n||0).toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1});
 const formatDate=s=>new Date(s+'T12:00:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric'});
 function render(data){
-  const dates=[...new Set(data.entries.map(e=>e.date))].sort();
-  const selected=dates.at(-1);
-  const rows=data.entries.filter(e=>e.date===selected);
-  const sum=k=>rows.reduce((a,e)=>a+Number(e[k]||0),0);
-  const saved=Number(localStorage.getItem('ketoTarget'));
-  const target=saved>0?saved:Number(data.dailyTargetNetCarbs||20);
-  const net=sum('netCarbs'), remaining=Math.max(target-net,0), pct=target?Math.min(net/target*100,100):0;
-  document.getElementById('subtitle').textContent='Resumo de '+formatDate(selected)+' • última atualização '+new Date(data.updatedAt).toLocaleString('pt-BR');
-  document.getElementById('status').textContent=net<=target?'Dentro da meta':'Meta ultrapassada';
-  document.getElementById('dayTitle').textContent=formatDate(selected);
-  document.getElementById('remaining').textContent=fmt(remaining);
-  document.getElementById('consumedText').textContent=fmt(net)+' g consumidos';
-  document.getElementById('targetText').textContent='Meta '+fmt(target)+' g';
-  document.getElementById('progressBar').style.width=pct+'%';
-  document.getElementById('donut').style.setProperty('--pct',pct);
-  document.getElementById('percent').textContent=Math.round(pct)+'%';
-  document.getElementById('netCarbs').textContent=fmt(net)+' g';
-  document.getElementById('calories').textContent=Math.round(sum('calories'));
-  document.getElementById('protein').textContent=fmt(sum('protein'))+' g';
-  document.getElementById('fat').textContent=fmt(sum('fat'))+' g';
-  document.getElementById('targetInput').value=target;
-  document.getElementById('entryCount').textContent=rows.length+' registro'+(rows.length===1?'':'s');
-  document.getElementById('entries').innerHTML=rows.map(e=>`<tr><td>${e.time||'—'}</td><td><span class="tag">${e.meal||'Outro'}</span></td><td><div class="food">${e.food}</div><small>${e.notes||''}</small></td><td>${fmt(e.quantity)} ${e.unit}</td><td class="num">${fmt(e.carbsTotal)} g</td><td class="num">${fmt(e.fiber)} g</td><td class="num"><strong>${fmt(e.netCarbs)} g</strong></td><td class="num">${Math.round(e.calories||0)} kcal</td></tr>`).join('');
-  document.getElementById('saveTarget').onclick=()=>{const v=Number(document.getElementById('targetInput').value);if(v>0){localStorage.setItem('ketoTarget',v);render(data)}};
+ const dates=[...new Set(data.entries.map(e=>e.date))].sort(),selected=dates.at(-1),rows=data.entries.filter(e=>e.date===selected),sum=k=>rows.reduce((a,e)=>a+Number(e[k]||0),0);
+ const saved=Number(localStorage.getItem('ketoTarget')),target=saved>0?saved:Number(data.dailyTargetNetCarbs||20),net=sum('netCarbs'),remaining=Math.max(target-net,0),pct=target?Math.min(net/target*100,100):0;
+ document.getElementById('subtitle').textContent='Atualizado em '+new Date(data.updatedAt).toLocaleString('pt-BR');
+ const status=document.getElementById('status');status.className='status '+(net<=target?'ok':net<=50?'warn':'danger');status.textContent=net<=target?'Dentro da meta':net<=50?'Acima da meta pessoal':'Acima da faixa keto';
+ document.getElementById('dayTitle').textContent=selected?formatDate(selected):'Hoje';document.getElementById('remaining').textContent=fmt(remaining);document.getElementById('heroPct').textContent=Math.round(pct)+'%';document.getElementById('progressBar').style.width=pct+'%';document.getElementById('consumedText').textContent=fmt(net)+' g consumidos';document.getElementById('targetText').textContent='Meta '+fmt(target)+' g';
+ document.getElementById('heroNote').textContent=net<=target?'Você ainda tem '+fmt(remaining)+' g líquidos disponíveis na meta de hoje.':net<=50?'A meta pessoal foi ultrapassada, embora o consumo ainda esteja dentro da faixa frequentemente usada em dietas cetogênicas.':'O consumo passou de 50 g líquidos, faixa em que a cetose se torna menos provável para muitas pessoas.';
+ document.getElementById('netCarbs').textContent=fmt(net)+' g';document.getElementById('calories').textContent=Math.round(sum('calories'));document.getElementById('protein').textContent=fmt(sum('protein'))+' g';document.getElementById('fat').textContent=fmt(sum('fat'))+' g';document.getElementById('targetInput').value=target;document.getElementById('entryCount').textContent=rows.length+' registro'+(rows.length===1?'':'s');
+ document.getElementById('foodList').innerHTML=rows.map(e=>`<article class="food-card"><div class="food-top"><div><div class="food-name">${e.food}</div><span class="tag">${e.meal||'Outro'}</span></div><div class="time">${e.time||'—'} · ${fmt(e.quantity)} ${e.unit}</div></div><div class="food-stats"><div class="food-stat"><span>Carb. líquidos</span><strong>${fmt(e.netCarbs)} g</strong></div><div class="food-stat"><span>Proteína</span><strong>${fmt(e.protein)} g</strong></div><div class="food-stat"><span>Calorias</span><strong>${Math.round(e.calories||0)}</strong></div></div>${e.notes?`<div class="note">${e.notes}</div>`:''}</article>`).join('');
+ document.getElementById('entries').innerHTML=rows.map(e=>`<tr><td>${e.time||'—'}</td><td><span class="tag">${e.meal||'Outro'}</span></td><td><strong>${e.food}</strong><div class="note">${e.notes||''}</div></td><td>${fmt(e.quantity)} ${e.unit}</td><td class="num">${fmt(e.carbsTotal)} g</td><td class="num">${fmt(e.fiber)} g</td><td class="num"><strong>${fmt(e.netCarbs)} g</strong></td><td class="num">${Math.round(e.calories||0)} kcal</td></tr>`).join('');
+ const setGoal=v=>{if(v>=10&&v<=100){localStorage.setItem('ketoTarget',v);render(data)}};document.getElementById('saveTarget').onclick=()=>setGoal(Number(document.getElementById('targetInput').value));document.querySelectorAll('[data-goal]').forEach(b=>b.onclick=()=>setGoal(Number(b.dataset.goal)));
 }
-fetch('./data.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject()).then(render).catch(()=>render(fallback));
+fetch('./data.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject()).then(render).catch(()=>render(fallback));
 </script>
 </body>
 </html>
