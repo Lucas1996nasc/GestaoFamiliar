@@ -58,6 +58,54 @@
       "sodiumMg": 82,
       "calories": 188,
       "notes": "Calculado pela embalagem: duas porções de 15 g."
+    },
+    {
+      "date": "2026-07-11",
+      "time": "16:26",
+      "meal": "Lanche",
+      "food": "Pão de frango caseiro",
+      "quantity": 56,
+      "unit": "g",
+      "carbsTotal": 1.0,
+      "fiber": 0,
+      "netCarbs": 1.0,
+      "protein": 15.1,
+      "fat": 6.2,
+      "calories": 123,
+      "notes": "Fatia calculada sobre rendimento final de 416 g. Receita: 200 g de peito de frango cozido, 5 ovos grandes, 50 g de parmesão ralado, 100 ml de água e 1 colher de fermento químico. Valores do frango, ovos, parmesão e fermento são estimados."
+    },
+    {
+      "date": "2026-07-11",
+      "time": "16:26",
+      "meal": "Lanche",
+      "food": "Manteiga",
+      "quantity": 10,
+      "unit": "g",
+      "carbsTotal": 0,
+      "fiber": 0,
+      "netCarbs": 0,
+      "protein": 0.1,
+      "fat": 8.1,
+      "calories": 72,
+      "notes": "Valor estimado para manteiga comum."
+    },
+    {
+      "date": "2026-07-11",
+      "time": "16:26",
+      "meal": "Lanche",
+      "food": "Mussarela",
+      "quantity": 37,
+      "unit": "g",
+      "carbsTotal": 0.7,
+      "fiber": 0,
+      "netCarbs": 0.7,
+      "protein": 8.9,
+      "fat": 8.9,
+      "saturatedFat": 4.9,
+      "sodiumMg": 158,
+      "calciumMg": 273,
+      "calories": 118,
+      "notes": "Calculado pelo rótulo enviado: porção de 30 g com 96 kcal, 0,6 g de carboidratos, 7,2 g de proteína e 7,2 g de gorduras."
     }
   ]
 }
