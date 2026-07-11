@@ -138,21 +138,6 @@
       "sodiumMg": 82,
       "calories": 188,
       "notes": "Calculado pela embalagem: duas porções de 15 g."
-    },
-    {
-      "date": "2026-07-11",
-      "time": "18:58",
-      "meal": "Bebida",
-      "food": "Refrigerante zero açúcar",
-      "quantity": 200,
-      "unit": "ml",
-      "carbsTotal": 0,
-      "fiber": 0,
-      "netCarbs": 0,
-      "protein": 0,
-      "fat": 0,
-      "calories": 0,
-      "notes": "Registrado mesmo com valores energéticos e carboidratos zerados no rótulo."
     }
   ]
 }
